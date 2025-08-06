@@ -27,13 +27,13 @@
 <body>
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        @include('layouts.header')
-        @include('layouts.aside')
+        @include('layouts.back.header')
+        @include('layouts.back.aside')
         <div class="page-wrapper">
             <div class="container-fluid">
                 @yield('content')
             </div>
-            @include('layouts.footer')
+            @include('layouts.back.footer')
         </div>
     </div>
 
