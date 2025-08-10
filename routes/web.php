@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Seguridad\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,9 @@ Route::prefix('admin-backend')->middleware('auth')->group(function () {
     Route::get('', function () {
         return view('layouts.back.app');
     })->name('admin');
+
+    /* RUTAS DEL MENU */
+    Route::get('menu', [MenuController::class, 'index'])->name('menu');
+    Route::get('menu/create', [MenuController::class, 'create'])->name('menu.create');
+    Route::post('menu', [MenuController::class, 'store'])->name('menu.store');
 });

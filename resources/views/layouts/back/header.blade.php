@@ -3,10 +3,10 @@
         <div class="navbar-header" data-logobg="skin5">
             <a class="navbar-brand" href="index.html">
                 <b class="logo-icon ps-2">
-                    <img src="{{ asset('assets/back/images/logo-icon.png') }}" alt="homepage" class="light-logo" width="25" />
+                    <img src="{{ asset('assets/back/matrix-admin-bootstrap5/images/logo-icon.png') }}" alt="homepage" class="light-logo" width="25" />
                 </b>
                 <span class="logo-text ms-2">
-                    <img src="{{ asset('assets/back/images/logo-text.png') }}" alt="homepage" class="light-logo" />
+                    <img src="{{ asset('assets/back/matrix-admin-bootstrap5/images/logo-text.png') }}" alt="homepage" class="light-logo" />
                 </span>
             </a>
             <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
@@ -167,7 +167,7 @@
                   "
                         href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <img src="{{ asset('assets/back/images/users/1.jpg') }}" alt="user" class="rounded-circle"
+                        <img src="{{ asset('assets/back/matrix-admin-bootstrap5/images/users/1.jpg') }}" alt="user" class="rounded-circle"
                             width="31" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">

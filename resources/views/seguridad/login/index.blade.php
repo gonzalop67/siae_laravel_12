@@ -13,9 +13,9 @@
     <meta name="robots" content="noindex,nofollow" />
     <title>Matrix Admin Lite Free Versions Template by WrapPixel</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/back/images/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/back/matrix-admin-bootstrap5/images/favicon.png') }}" />
     <!-- Custom CSS -->
-    <link href="{{ asset('assets/back/css/style.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/back/matrix-admin-bootstrap5/css/style.min.css') }}" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,7 +35,7 @@
             <div class="auth-box bg-dark border-top border-secondary">
                 <div id="loginform">
                     <div class="text-center pt-3 pb-3">
-                        <span class="db"><img src="{{ asset('assets/back/images/logo.png') }}"
+                        <span class="db"><img src="{{ asset('assets/back/matrix-admin-bootstrap5/images/logo.png') }}"
                                 alt="logo" /></span>
                     </div>
                     <!-- Form -->
@@ -98,9 +98,9 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="{{ asset('assets/back/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('assets/back/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
