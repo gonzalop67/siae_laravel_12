@@ -26,5 +26,9 @@ Route::prefix('admin-backend')->middleware('auth')->group(function () {
     /* RUTAS DEL MENU */
     Route::get('menu', [MenuController::class, 'index'])->name('menu');
     Route::get('menu/create', [MenuController::class, 'create'])->name('menu.create');
+    Route::get('menu/{id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
     Route::post('menu', [MenuController::class, 'store'])->name('menu.store');
+    Route::put('menu/{id}', [MenuController::class, 'update'])->name('menu.update');
+    Route::delete('menu/{id}/delete', [MenuController::class, 'destroy'])->name('menu.delete');
+    Route::post('menu/guardar-orden', [MenuController::class, 'guardarOrden'])->name('menu.orden');
 });

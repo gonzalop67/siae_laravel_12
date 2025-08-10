@@ -6,16 +6,16 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            @if ($mensaje = session('mensaje'))
-                <x-alert tipo="success" :mensaje="$mensaje" />
+            @if ($message = session('mensaje'))
+                <x-alert type="success" :message="$message" />
             @endif
             @if ($errors->any())
-                <x-alert tipo="danger" :mensaje="$errors" />
+                <x-alert type="danger" :message="$errors" />
             @endif
             <div class="card">
                 <div class="card-header bg-success">
-                    <h5 class="text-white float-left">Crear Menús</h5>
-                    <a href="{{route('menu')}}" class="btn btn-outline-light btn-sm text-end">Volver al listado</a>
+                    <h5 class="text-white float-start">Crear Menús</h5>
+                    <a href="{{route('menu')}}" class="btn btn-outline-light btn-sm float-end">Volver al listado</a>
                 </div>
                 <form action="{{ route('menu.store') }}" id="form-general" class="form-horizontal" method="post">
                     @csrf
@@ -39,5 +39,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/back/js/scripts/menu/crear.js') }}"></script>
+    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/scripts/menu/crear.js') }}"></script>
 @endsection

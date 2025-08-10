@@ -15,6 +15,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/back/matrix-admin-bootstrap5/images/favicon.png') }}" />
     <!-- Custom CSS -->
+    @yield('styles')
     <link href="{{ asset('assets/back/matrix-admin-bootstrap5/css/style.min.css') }}" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,6 +44,13 @@
     <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
     <!--Menu sidebar -->
     <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/sidebarmenu.js') }}"></script>
+    <!--Plugins -->
+    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/jquery-validation/dist/localization/messages_es.js') }}"></script>
+    <!--Plugins de paginas especificas -->
+    @yield('scriptsPlugins')
+    <!--Scripts de paginas especificas -->
+    @yield('scripts')
     <!--Custom JavaScript -->
     <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/custom.min.js') }}"></script>
     <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/main.js') }}"></script>

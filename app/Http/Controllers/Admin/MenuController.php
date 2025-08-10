@@ -30,7 +30,19 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate the form
+        $validado = $request->validate([
+            'nombre' => 'required|max:50|unique:menus,nombre',
+            'url' => 'required|max:100',
+            'icono' => 'nullable|max:50'
+        ],[
+            'nombre.required' => 'El campo Nombre es obligatorio.',
+            'nombre.unique' => 'El campo Nombre ya existe en la base de datos.',
+            'url.required' => 'El campo Url es obligatorio.'
+        ]);
+
+        Menu::create($validado);
+        return redirect()->route('menu.create')->with('mensaje', 'Menu guardado correctamente');
     }
 
     /**
@@ -63,5 +75,16 @@ class MenuController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function guardarOrden(Request $request)
+    {
+        if ($request->ajax()) {
+            Menu::guardarOrden($request->menu);
+            // cache()->tags('Menu')->flush(); // Clear cache after creating a new menu
+            return response()->json(['respuesta' => 'ok']);
+        } else {
+            abort(404);
+        }
     }
 }
