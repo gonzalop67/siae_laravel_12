@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-
+            // Campos propios del programador
             $table->string('titulo', 5);
             $table->string('apellidos', 32);
             $table->string('nombres', 32);
@@ -26,11 +26,12 @@ return new class extends Migration
             $table->string('foto', 100);
             $table->string('genero', 1);
             $table->tinyInteger('activo');
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_spanish_ci';
-
+            // Fin Campos propios del programador
             $table->rememberToken();
             $table->timestamps();
+            // Definición de collation
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

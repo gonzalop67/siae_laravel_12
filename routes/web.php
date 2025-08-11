@@ -5,7 +5,7 @@ use App\Http\Controllers\Seguridad\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('seguridad.login.index');
+    return view('theme.matrix-admin-bootstrap5.seguridad.login.index');
 });
 
 // Route::get('login', function () {
@@ -20,7 +20,7 @@ Route::controller(LoginController::class)->prefix('seguridad')->group(function (
 
 Route::prefix('admin-backend')->middleware('auth')->group(function () {
     Route::get('', function () {
-        return view('layouts.back.app');
+        return view('theme.matrix-admin-bootstrap5.layouts.back.app');
     })->name('admin');
 
     /* RUTAS DEL MENU */

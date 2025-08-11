@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('permisos', function (Blueprint $table) {
             $table->id();
-
+            // Campos propios del programador
             $table->string('nombre', 50)->unique();
             $table->string('slug', 50)->unique();
-
+            // Fin Campos propios del programador
             $table->timestamps();
+            // Definición de collation
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

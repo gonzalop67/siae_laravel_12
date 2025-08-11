@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
+            // Campos propios del programador
             $table->unsignedBigInteger('menu_id')->nullable();
             $table->foreign('menu_id', 'fk_menu_menu')
                     ->references('id')
@@ -23,7 +24,11 @@ return new class extends Migration
             $table->string('url', 100);
             $table->unsignedInteger('orden')->default(1);
             $table->string('icono', 50)->nullable();
+            // Fin Campos propios del programador
             $table->timestamps();
+            // Definición de collation
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 

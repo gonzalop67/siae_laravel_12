@@ -12,7 +12,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('seguridad.login.index');
+        return view('theme.matrix-admin-bootstrap5.seguridad.login.index');
     }
 
     public function login(LoginRequest $request): RedirectResponse
