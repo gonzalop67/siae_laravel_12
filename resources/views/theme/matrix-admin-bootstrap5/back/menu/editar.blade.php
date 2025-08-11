@@ -14,11 +14,12 @@
             @endif
             <div class="card">
                 <div class="card-header bg-success">
-                    <h5 class="text-white float-start">Crear Menús</h5>
+                    <h5 class="text-white float-start">Editar Menu: {{$data->nombre}}</h5>
                     <a href="{{ route('menu') }}" class="btn btn-outline-light btn-sm float-end">Volver al listado</a>
                 </div>
-                <form action="{{ route('menu.store') }}" id="form-general" class="form-horizontal" method="post">
-                    @csrf
+                <form action="{{ route('menu.update', $data->id) }}" id="form-general" class="form-horizontal" method="post">
+                    @csrf @method('put')
+                    <input type="hidden" name="menu_id" value="{{ $data->id }}">
                     <div class="card-body">
                         @include('theme.' . $theme . '.back.menu.form')
                     </div>
@@ -27,7 +28,7 @@
                             <div class="row">
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-5">
-                                    <button type="submit" class="btn btn-success">Guardar</button>
+                                    <button type="submit" class="btn btn-success">Actualizar</button>
                                 </div>
                             </div>
                         </div>

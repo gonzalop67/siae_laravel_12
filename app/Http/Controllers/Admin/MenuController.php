@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\ValidacionMenu;
 use App\Models\Admin\Menu;
 use Illuminate\Http\Request;
 
@@ -28,21 +29,10 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ValidacionMenu $request)
     {
-        //validate the form
-        $validado = $request->validate([
-            'nombre' => 'required|max:50|unique:menus,nombre',
-            'url' => 'required|max:100',
-            'icono' => 'nullable|max:50'
-        ],[
-            'nombre.required' => 'El campo Nombre es obligatorio.',
-            'nombre.unique' => 'El campo Nombre ya existe en la base de datos.',
-            'url.required' => 'El campo Url es obligatorio.'
-        ]);
-
-        Menu::create($validado);
-        return redirect()->route('menu.create')->with('mensaje', 'Menu guardado correctamente');
+        Menu::create($request->validated());
+        return redirect()->route('menu.create')->with('mensaje', 'Menu guardado exitosamente.');
     }
 
     /**
@@ -58,15 +48,18 @@ class MenuController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Menu::findOrFail($id);
+        return view('theme.matrix-admin-bootstrap5.back.menu.editar', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ValidacionMenu $request, string $id)
     {
-        //
+        Menu::findOrFail($id)->update($request->validated());
+        // cache()->tags('Menu')->flush(); // Clear cache after creating a new menu
+        return redirect()->route('menu')->with('mensaje', 'Menú actualizado con éxito.');
     }
 
     /**
