@@ -1,18 +1,18 @@
-@extends('layouts.back.app')
+@extends('theme.' . $theme . '.layouts.back.app')
 @section('title')
     Menú
 @endsection
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('assets/back/matrix-admin-bootstrap5/extra-libs/nestable/jquery.nestable.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/back/' . $theme . '/extra-libs/nestable/jquery.nestable.css') }}">
 @endsection
 
 @section('scriptsPlugins')
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/extra-libs/nestable/jquery.nestable.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/extra-libs/nestable/jquery.nestable.js') }}"></script>
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/scripts/menu/index.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/js/scripts/menu/index.js') }}"></script>
 @endsection
 
 @section('content')
@@ -34,7 +34,7 @@
                                 @if ($item['menu_id'] != null)
                                     break;
                                 @endif
-                                @include('back.menu.menu-item', ['item' => $item])
+                                @include('theme.' . $theme . '.back.menu.menu-item', ['item' => $item])
                             @endforeach
                         </ol>
                     </div>

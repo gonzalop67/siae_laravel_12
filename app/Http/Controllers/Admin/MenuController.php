@@ -14,7 +14,7 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::getMenu();
-        return view('back.menu.index', compact('menus'));
+        return view('theme.matrix-admin-bootstrap5.back.menu.index', compact('menus'));
     }
 
     /**
@@ -22,7 +22,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        return view('back.menu.crear');
+        return view('theme.matrix-admin-bootstrap5.back.menu.crear');
     }
 
     /**

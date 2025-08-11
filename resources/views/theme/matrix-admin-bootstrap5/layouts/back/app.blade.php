@@ -13,10 +13,11 @@
     <meta name="robots" content="noindex,nofollow" />
     <title>@yield('title')</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/back/matrix-admin-bootstrap5/images/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/back/' . $theme . '/images/favicon.png') }}" />
     <!-- Custom CSS -->
     @yield('styles')
-    <link href="{{ asset('assets/back/matrix-admin-bootstrap5/css/style.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/back/' . $theme . '/css/style.min.css') }}" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,32 +29,33 @@
 <body>
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        @include('layouts.back.header')
-        @include('layouts.back.aside')
+        @include('theme.' . $theme . '.layouts.back.header')
+        @include('theme.' . $theme . '.layouts.back.aside')
         <div class="page-wrapper">
             <div class="container-fluid">
                 @yield('content')
             </div>
-            @include('layouts.back.footer')
+            @include('theme.' . $theme . '.layouts.back.footer')
         </div>
     </div>
 
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}">
+    </script>
     <!--Menu sidebar -->
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/js/sidebarmenu.js') }}"></script>
     <!--Plugins -->
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/libs/jquery-validation/dist/localization/messages_es.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/libs/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/libs/jquery-validation/dist/localization/messages_es.js') }}"></script>
     <!--Plugins de paginas especificas -->
     @yield('scriptsPlugins')
     <!--Scripts de paginas especificas -->
     @yield('scripts')
     <!--Custom JavaScript -->
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/custom.min.js') }}"></script>
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/main.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/js/custom.min.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/js/main.js') }}"></script>
 </body>
 
 </html>

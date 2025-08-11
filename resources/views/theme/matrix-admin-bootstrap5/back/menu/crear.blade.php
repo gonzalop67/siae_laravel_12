@@ -1,4 +1,4 @@
-@extends('layouts.back.app')
+@extends('theme.' . $theme . '.layouts.back.app')
 @section('title')
     Sistema Menús
 @endsection
@@ -15,12 +15,12 @@
             <div class="card">
                 <div class="card-header bg-success">
                     <h5 class="text-white float-start">Crear Menús</h5>
-                    <a href="{{route('menu')}}" class="btn btn-outline-light btn-sm float-end">Volver al listado</a>
+                    <a href="{{ route('menu') }}" class="btn btn-outline-light btn-sm float-end">Volver al listado</a>
                 </div>
                 <form action="{{ route('menu.store') }}" id="form-general" class="form-horizontal" method="post">
                     @csrf
                     <div class="card-body">
-                        @include('back.menu.form')
+                        @include('theme.matrix-admin-bootstrap5.back.menu.form')
                     </div>
                     <div class="border-top">
                         <div class="card-body">
@@ -39,5 +39,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/back/matrix-admin-bootstrap5/js/scripts/menu/crear.js') }}"></script>
+    <script src="{{ asset('assets/back/' . $theme . '/js/scripts/menu/crear.js') }}"></script>
 @endsection
